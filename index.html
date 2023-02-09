@@ -23,16 +23,16 @@
         </div>
 
                     
-        <form>
+        <form action="/action_page.php" method="get" id="form1">
 
                 <div class="row">
                     <div class="form-group col-md-5">
                         <label for="cardNumber">Card#</label>
-                        <input type="text" class="form-control" name="cardNumber" id="cardNumber" placeholder="XXXXXXXXXXXXXXXXXX">
+                        <input type="text" class="form-control" name="cardNumber" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX" maxlength="16" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="cvc">CVC#</label>
-                        <input type="text" class="form-control" name="cvc" id="cvc" placeholder="0000">
+                        <input type="text" class="form-control" name="cvc" id="cvc" placeholder="0000" maxlength="4" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
                    
                     <div class="form-group col-md-4">
@@ -41,28 +41,28 @@
                             <span>
                                 <i class="fa-solid fa-dollar-sign"></i>
                             </span>
-                            <input type="text" class="form-control" id="inputAmount" placeholder="Amount">
+                            <input type="text" class="form-control" id="inputAmount" placeholder="Amount" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6" >
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" name="firstName" id="firstName">
+                        <input type="text" class="form-control" name="firstName" id="firstName" oninput="this.value = this.value.replace(/[^a-zAZ-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-.]/g, '').replace(/(\..*)\./g, '$1');"/>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" name="lastName" id="lastName">
+                        <input type="text" class="form-control" name="lastName" id="lastName" oninput="this.value = this.value.replace(/[^a-zAZ-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-.]/g, '').replace(/(\..*)\./g, '$1');"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6" >
                         <label for="city">City</label>
-                        <input type="text" class="form-control" name="city" id="city">
+                        <input type="text" class="form-control" name="city" id="city" oninput="this.value = this.value.replace(/[^a-zAZ-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-.]/g, '').replace(/(\..*)\./g, '$1');"/>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="state">State</label>
-                        <select class="form-control" name="state" id="state">
+                        <select class="form-control" name="state" id="state" oninput="this.value = this.value.replace(/[^a-zAZ-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-.]/g, '').replace(/(\..*)\./g, '$1');"/>
                             <option selected>Pick a state</option>
                             <option>Mallorca</option>
                             <option>Ibiza</option>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label for="postalCode">Postal Code</label>
-                        <input type="text" class="form-control" name="postalCode" id="postalCode">
+                        <input type="text" class="form-control" name="postalCode" id="postalCode" maxlength="5" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
                 </div>
                 <div class="row">
@@ -110,8 +110,8 @@
     <div class="card-footer d-flex">
         <div class="row ml-auto">
             <div class="col-12">
-                <a href="#" class="btn btn-secondary">Cancel</a>
-                <a href="#" class="btn btn-primary" type="submit">Send</a>
+                <button href="#" class="btn btn-secondary" type="reset" form="form1">Cancel</button>
+                <button href="#" class="btn btn-primary" type="submit" form="form1" value="send">Send</button>
             </div>
         </div>
     </div>
